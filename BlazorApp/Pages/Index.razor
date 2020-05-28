@@ -3,5 +3,16 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
-
+It is @time
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{ 
+    private DateTime time = DateTime.Now;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        time = DateTime.Now;
+    }
+}
